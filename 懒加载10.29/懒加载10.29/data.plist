@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>name</key>
+		<string>rongshanlong1</string>
+		<key>desc</key>
+		<string>熔山龙</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>mingdenglong1</string>
+		<key>desc</key>
+		<string>冥灯龙</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>ganglong1</string>
+		<key>desc</key>
+		<string>钢龙</string>
+		<key>New item</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>shitaolong1</string>
+		<key>desc</key>
+		<string>尸套龙</string>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>yanwanglong1</string>
+		<key>desc</key>
+		<string>炎王龙</string>
+	</dict>
+</array>
+</plist>

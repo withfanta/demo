@@ -17,6 +17,7 @@
 @property (nonatomic,strong)UIImageView *icon;
 @property (nonatomic,strong)UIButton *leftbtn;
 @property (nonatomic,strong)UIButton *rightbtn;
+@property (nonatomic,strong)NSArray *array;
 - (void)change;
 @property (nonatomic,assign)int i;
 @end
@@ -40,7 +41,7 @@
     [self.view addSubview:PI];
     self.icon = PI;
     //创建下面的语言描述label
-    UILabel *des = [[UILabel alloc]initWithFrame:CGRectMake(20, 400, 300, 30)];
+    UILabel *des = [[UILabel alloc]initWithFrame:CGRectMake(self.icon.bounds.origin.x, 400, 300, 30)];
     [des setTextAlignment:NSTextAlignmentCenter];
     [self.view addSubview:des];
     self.lastlab = des;
@@ -86,9 +87,42 @@
             self.icon.image = [UIImage imageNamed:@"yanwanglong1"];
             break;
     }
+//    self.icon.image = [UIImage imageNamed:self.array[self.i][@"name"]];
+//    self.lastlab.text = self.array[self.i][@"desc"];
     self.leftbtn.enabled = (self.i!=0);
     self.rightbtn.enabled = (self.i!=4);
 }
+- (UIImageView *)icon{
+    if (!_icon){
+        CGFloat imageW = 200;
+        CGFloat imageX = (320 - imageW)/2;
+        CGFloat imageH = 200;
+        CGFloat imageY = 80;
+        _icon = [[UIImageView alloc] initWithFrame:CGRectMake(imageX, imageY, imageW, imageH)];
+        [self.view addSubview:_icon];
+    }
+    return _icon;
+}
+//- (NSArray *)array{
+//    //只实例化一次
+//    if (_array==nil){
+//        NSLog(@"实例化数组");
+//        NSDictionary *dict1=@{@"name": @"rongshanlong1",@"desc":@"熔山龙"};
+//        NSDictionary *dict2=@{@"name": @"mingdenglong1",@"desc":@"冥灯龙"};
+//        NSDictionary *dict3=@{@"name": @"ganglong1",@"desc":@"钢龙"};
+//        NSDictionary *dict4=@{@"name": @"shitaolong1",@"desc":@"尸套龙"};
+//        NSDictionary *dict5=@{@"name": @"yanwanglong1",@"desc":@"炎王龙"};
+//        _array=@[dict1,dict2,dict3,dict4,dict5];
+//             }
+//     return _array;
+//}
+//- (NSArray *)array{
+//    NSLog(@"需要获取数组");
+//    //只实例化一次
+//    if (_array==nil){
+//        NSString *path=[[NSBundle mainBundle]];
+//    }
+//}
 //向右左按键
 - (void)rightclick:(UIButton *)btn{
     self.i++;

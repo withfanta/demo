@@ -14,6 +14,7 @@
 
 @implementation ViewController
 - (NSArray *)apps{
+    //1.从mainBundle加载
     if (!_apps){
         NSString *path = [[NSBundle mainBundle]pathForResource:@"app.plist" ofType:nil];
         _apps = [NSArray arrayWithContentsOfFile:path];

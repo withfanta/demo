@@ -7,9 +7,10 @@
 //
 
 #import "ViewController.h"
-
+#import "Appinfo.h"
 @interface ViewController ()
 @property (nonatomic,strong)NSArray *apps;
+@property (nonatomic,assign)int i;
 @end
 
 @implementation ViewController
@@ -17,7 +18,13 @@
     //1.从mainBundle加载
     if (!_apps){
         NSString *path = [[NSBundle mainBundle]pathForResource:@"app.plist" ofType:nil];
-        _apps = [NSArray arrayWithContentsOfFile:path];
+//        _apps = [NSArray arrayWithContentsOfFile:path];
+        NSArray *array = [NSArray arrayWithContentsOfFile:path];
+        NSMutableArray *arrayM = [NSMutableArray array];
+        for (NSDictionary *dict in array){
+            [arrayM addObject:[Appinfo appInfoWithDict:dict]];
+        }
+        _apps = arrayM;
     }
     return _apps;
 }
@@ -34,6 +41,7 @@
     CGFloat margin = (self.view.frame.size.width-totalloc*appvieww)/(totalloc+1);
     int count = self.apps.count;
     for (int i; i<count; i++){
+        self.i = i;
         int row = i/totalloc;
         int loc = i%totalloc;
         CGFloat appviewx = margin+(margin+appvieww)*loc;
@@ -42,14 +50,15 @@
         UIView *appview = [[UIView alloc]initWithFrame:CGRectMake(appviewx, appviewy, appvieww, appviewh)];
         [self.view addSubview:appview];
         //创建uiview中的子视图
+        Appinfo *appInfo = self.apps[i];
         UIImageView *appimageview = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 80, 50)];
-        UIImage *appimage = [UIImage imageNamed:self.apps[i][@"icon"]];
-        appimageview.image = appimage;
+//        UIImage *appimage = [UIImage imageNamed:self.apps[i][@"icon"]];
+        appimageview.image = appInfo.image;
         [appimageview setContentMode:UIViewContentModeScaleAspectFit];
         [appview addSubview:appimageview];
         //创建文本标签
         UILabel *applabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 50, 80, 20)];
-        [applabel setText:self.apps[i][@"name"]];
+        applabel.text = appInfo.name;
         [applabel setTextAlignment:NSTextAlignmentCenter];
         [applabel setFont:[UIFont systemFontOfSize:12.0]];
         [appview addSubview:applabel];
@@ -78,6 +87,7 @@
     }
      ];
 }
+    
 
 
 - (void)didReceiveMemoryWarning {

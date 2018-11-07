@@ -16,6 +16,7 @@
 		14C313A7218C6AC3001F7BA7 /* _______Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C313A6218C6AC3001F7BA7 /* _______Tests.m */; };
 		14C313B2218C6AC3001F7BA7 /* _______UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C313B1218C6AC3001F7BA7 /* _______UITests.m */; };
 		14C313C0218C6E0F001F7BA7 /* app.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14C313BF218C6E0E001F7BA7 /* app.plist */; };
+		14C3143F218F1929001F7BA7 /* Appinfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 14C3143E218F1929001F7BA7 /* Appinfo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		14C313B1218C6AC3001F7BA7 /* _______UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_______UITests.m"; sourceTree = "<group>"; };
 		14C313B3218C6AC3001F7BA7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14C313BF218C6E0E001F7BA7 /* app.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = app.plist; sourceTree = "<group>"; };
+		14C3143D218F1929001F7BA7 /* Appinfo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Appinfo.h; sourceTree = "<group>"; };
+		14C3143E218F1929001F7BA7 /* Appinfo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Appinfo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +116,8 @@
 				14C31398218C6AC3001F7BA7 /* LaunchScreen.storyboard */,
 				14C3139B218C6AC3001F7BA7 /* Info.plist */,
 				14C3139C218C6AC3001F7BA7 /* main.m */,
+				14C3143D218F1929001F7BA7 /* Appinfo.h */,
+				14C3143E218F1929001F7BA7 /* Appinfo.m */,
 			);
 			path = "九宫格坐标计算";
 			sourceTree = "<group>";
@@ -267,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				14C31392218C6AB6001F7BA7 /* ViewController.m in Sources */,
+				14C3143F218F1929001F7BA7 /* Appinfo.m in Sources */,
 				14C3139D218C6AC3001F7BA7 /* main.m in Sources */,
 				14C3138F218C6AB6001F7BA7 /* AppDelegate.m in Sources */,
 			);
